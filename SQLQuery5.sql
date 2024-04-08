@@ -1,0 +1,6 @@
+SELECT TOP (1000) [Barcode]
+      ,[Name]
+      ,[Price]
+      ,[Quantity]
+      ,[Supplier]
+  FROM [InventoryDB].[dbo].[Products]
