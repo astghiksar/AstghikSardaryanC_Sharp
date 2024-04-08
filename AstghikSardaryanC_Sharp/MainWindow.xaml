@@ -1,0 +1,34 @@
+﻿<Window x:Class="ProductManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Product Management" Height="450" Width="1029">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <TextBox x:Name="txtBarcode" Width="200" Margin="5" Text="Enter Barcode" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="txtName" Width="200" Margin="5" Text="Enter Name" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="txtSupplier" Width="200" Margin="5" Text="Enter Supplier" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="txtPrice" Width="100" Margin="5" Text="Enter Price" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <TextBox x:Name="txtQuantity" Width="100" Margin="5" Text="Enter Quantity" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Add Product" Click="AddProduct_Click" Width="150" Margin="5"/>
+        </StackPanel>
+        <TextBox Grid.Row="1" x:Name="txtSearchBarcode" Width="200" Margin="15,0,814,20" Text="Enter Barcode to Search" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+        <Button Grid.Row="1" Content="Search" Click="Search_Click" Width="100" Margin="227,0,702,10"/>
+        <Button Grid.Row="1" Content="Delete" Click="DeleteProduct_Click" Width="100" Margin="340,0,580,10"/>
+        <ListView Grid.Row="2" x:Name="productListView" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Barcode" DisplayMemberBinding="{Binding Barcode}"/>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn Header="Supplier" DisplayMemberBinding="{Binding Supplier}"/>
+                    <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}"/>
+                    <GridViewColumn Header="Quantity" DisplayMemberBinding="{Binding Quantity}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
